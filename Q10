@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main(){
+
+  int low,high,i,j,flag;
+  printf("Enter lower limit:";
+  scanf("%d",&low);
+  printf("Enter upper limit:");
+  scanf("%d",&high);
+  printf("Prime no. between %d and %d are:",low,high);
+
+for (i=low;i<=high;i++){
+  if (i<=1)
+    {
+    continue; }
+  flag = 1;
+  for(j=2;j<=i/2;j++){
+    if(i%j==0){
+      flag=0;
+      break;} 
+    }
+  if(flag==1){
+    printf("%d",i);}
+              }         
+  return 0;
+}
