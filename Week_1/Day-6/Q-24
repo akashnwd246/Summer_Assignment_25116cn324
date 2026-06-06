@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    int x, n, i;
+    long long value = 1;
+
+    printf("Enter base x and exponent n: ");
+    scanf("%d%d",&x,&n);
+
+    if (n < 0) {
+        printf(" enter a positive power.\n");
+    } else {
+        for (i = 1; i <= n; i++) {
+            value = value * x;
+        }
+        printf("Answer: %lld\n",value);
+    }
+  return 0;
+}
