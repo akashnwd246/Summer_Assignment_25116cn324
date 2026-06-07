@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int fact(int n) {
+    int result;
+
+    if (n <= 1) {
+        result = 1;
+    } else {
+        result = n * fact(n - 1);
+    }
+
+    return result;
+}
+
+int main() {
+    int n;
+
+    printf("Enter number: ");
+    scanf("%d",&n);
+
+  if (n < 0) {
+        printf("Invalid\n");
+    } else {
+        printf("Factorial: %d\n",fact(n));
+    }
+
+    return 0;
+}
