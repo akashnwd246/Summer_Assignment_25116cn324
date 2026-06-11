@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int findMax(int a, int b) {
+    int result;
+
+    if (a > b) {
+        result = a;
+    } else {
+        result = b;
+    }
+
+    return result;
+}
+
+int main() {
+    int num1, num2, ans;
+
+    printf("Enter two numbers: ");
+    scanf("%d %d",&num1,&num2);
+
+    ans = findMax(num1, num2);
+    printf("Maximum:%d\n",ans);
+
+    return 0;
+}
