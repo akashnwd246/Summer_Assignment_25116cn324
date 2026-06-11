@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int checkPrime(int n) {
+    int result = 1;
+    int i;
+
+    if (n <= 1) {
+        result = 0;
+    } else {
+        for (i = 2; i <= n / 2; i++) {
+            if (n % i == 0) {
+                result = 0;
+                break;
+            }
+        }
+    }
+
+    return result;
+}
+
+int main() {
+    int num,ans;
+
+    printf("Enter a number: ");
+    scanf("%d",&num);
+
+    ans = checkPrime(num);
+
+    if (ans == 1) {
+        printf("%d is prime.\n",num);
+    } else {
+        printf("%d is not prime.\n",num);
+    }
+
+    return 0;
+}
