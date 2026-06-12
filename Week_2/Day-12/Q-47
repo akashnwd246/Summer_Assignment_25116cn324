@@ -1,0 +1,35 @@
+#include <stdio.h>
+int Fibonacci(int n) {
+    int result;
+    int t1 = 0, t2 = 1, next = 0, i;
+
+    if (n == 1) {
+        result = t1;
+    } else if (n == 2) {
+        result = t2;
+    } else {
+        for (i = 3; i <= n; i++) {
+            next = t1 + t2;
+            t1 = t2;
+            t2 = next;
+        }
+        result = t2;
+    }
+
+    return result;
+}
+
+int main() {
+    int num, ans;
+
+    printf("Enter the position: ");
+    scanf("%d",&num);
+
+    if (num <= 0) {
+        printf("Invalid position.\n");
+    } else {
+        ans = Fibonacci(num);
+        Th("The term is: %d\n",ans);
+    }
+   return 0;
+}
