@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main() {
+    int arr[100];
+    int n, i, totalSum, actualSum = 0, missing;
+
+    printf("Enter total elements including missing : ");
+    scanf("%d",&n);
+
+    printf("Enter %d elements: ", n - 1);
+    for (i = 0; i < n - 1; i++) {
+        scanf("%d", &arr[i]);
+        actualSum = actualSum + arr[i];
+    }
+
+    totalSum = (n * (n + 1)) / 2;
+    missing = totalSum - actualSum;
+
+    printf("Missing number is: %d\n",missing);
+
+    return 0;
+}
