@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main() {
+    char str[100];
+    int count[256] = {0};
+    int i = 0, max = 0;
+    char maxChar;
+
+    printf("Enter a string: ");
+    scanf("%s",str);
+
+    while (str[i] != '\0') {
+        count[(unsigned char)str[i]]++;
+        i++;
+    }
+
+    for (i = 0; i < 256; i++) {
+        if (count[i] > max) {
+            max = count[i];
+            maxChar = (char)i;
+        }
+    }
+
+    printf("Maximum occurring character is '%c' with a count of %d\n",maxChar,max);
+  return 0;
+}
