@@ -1,0 +1,36 @@
+#include <stdio.h>
+int main() {
+    char str[200];
+    int i = 0, len = 0, maxLen = 0, startIdx = 0, maxStart = 0;
+
+    printf("Enter a sentence: ");
+    scanf(" %[^\n]",str);
+
+    while (str[i] != '\0') {
+        if (str[i] != ' ') {
+            if (len == 0) {
+                startIdx = i;
+            }
+            len++;
+        } else {
+            if (len > maxLen) {
+                maxLen = len;
+                maxStart = startIdx;
+            }
+            len = 0;
+        }
+        i++;
+    }
+
+    if (len > maxLen) {
+        maxLen = len;
+        maxStart = startIdx;
+    }
+
+    printf("Longest word: ");
+    for (i = maxStart; i < maxStart + maxLen; i++) {
+        printf("%c",str[i]);
+    }
+    printf("\n");
+return 0;
+}
