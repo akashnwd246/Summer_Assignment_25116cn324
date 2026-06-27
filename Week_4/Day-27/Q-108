@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main() {
+    char name[50];
+    int sub1, sub2, sub3, total;
+    float percentage;
+
+    printf("Enter student name: ");
+    scanf("%s",&name);
+
+    printf("Enter marks for 3 subjects (out of 100):\n");
+    scanf("%d %d %d",&sub1,&sub2,&sub3);
+
+    total = sub1 + sub2 + sub3;
+    percentage = total / 3.0;
+
+    printf("          MARKSHEET          \n");
+    printf("Name: %s\n", name);
+    printf("Subject 1: %d\n",sub1);
+    printf("Subject 2: %d\n",sub2);
+    printf("Subject 3: %d\n",sub3);
+    
+    printf("Total Marks: %d/300\n",total);
+    printf("Percentage: %.2f%%\n",percentage);
+ return 0;
+}
