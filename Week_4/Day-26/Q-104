@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main() {
+    int ans, score = 0;
+
+    printf("Q1. Which planet is known as the Red Planet?\n");
+    printf("1. Earth\n2. Mars\n3. Venus\n4. Jupiter\n");
+    printf("Enter answer option: ");
+    scanf("%d",&ans);
+    if (ans == 2) {
+        score++;
+    }
+
+    printf("\nQ2. Which is the largest ocean on Earth?\n");
+    printf("1. Indian Ocean\n2. Atlantic Ocean\n3. Arctic Ocean\n4. Pacific Ocean\n");
+    printf("Enter answer option: ");
+    scanf("%d",&ans);
+    if (ans == 4) {
+        score++;
+    }
+
+    printf("\nYour total quiz score: %d/2\n",score);
+  return 0;
+}
