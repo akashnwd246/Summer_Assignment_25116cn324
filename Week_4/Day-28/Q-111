@@ -1,0 +1,28 @@
+#include <stdio.h>
+struct Ticket {
+    int ticketId;
+    char movie[50];
+    int seats;
+    float totalCost;
+};
+
+int main() {
+    struct Ticket t;
+
+    printf(" Movie Ticket Booking \n");
+    printf("Enter Booking ID: ");
+    scanf("%d",&t.ticketId);
+    printf("Enter Movie Name: ");
+    scanf("%s",&t.movie);
+    printf("Enter Number of Seats: ");
+    scanf("%d",&t.seats);
+
+    t.totalCost = t.seats * 250.0;
+
+    printf("\nBooking Confirmed! \n");
+    printf("Booking ID: %d\n",t.ticketId);
+    printf("Movie: %s\n",t.movie);
+    printf("Seats Booked: %d\n",t.seats);
+    printf("Total Amount Paid: Rs. %.2f\n",t.totalCost);
+ return 0;
+}
