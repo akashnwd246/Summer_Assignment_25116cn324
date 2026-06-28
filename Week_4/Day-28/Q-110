@@ -1,0 +1,25 @@
+#include <stdio.h>
+struct Account {
+    int accNum;
+    char name[50];
+    float balance;
+};
+
+int main() {
+    struct Account acc;
+
+    printf(" Create New Account \n");
+    printf("Enter account number: ");
+    scanf("%d",&acc.accNum);
+    printf("Enter holder name: ");
+    scanf("%s",&acc.name);
+    printf("Enter initial balance: ");
+    scanf("%f",&acc.balance);
+
+    printf("\nAccount Details Registered \n");
+    printf("Account Number: %d\n",acc.accNum);
+    printf("Account Holder: %s\n",acc.name);
+    printf("Available Balance: Rs. %.2f\n",acc.balance);
+
+return 0;
+}
