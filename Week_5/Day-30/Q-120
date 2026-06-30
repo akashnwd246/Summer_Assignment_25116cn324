@@ -1,0 +1,31 @@
+#include <stdio.h>
+void displayMessage() {
+    
+ printf("   WELCOME TO THE MINI PROJECT   \n");    
+}
+
+int main() {
+    char data[5][50];
+    int count, i;
+
+    displayMessage();
+
+    printf("Enter number of entries (max 5): ");
+    scanf("%d",&count);
+
+    if (count > 5) {
+        count = 5;
+    }
+
+    printf("Enter %d items/words:\n",count);
+    for (i = 0; i < count; i++) {
+        scanf("%s",&data[i]);
+    }
+
+    printf("\nDisplaying Complete Log Dashboard:\n");
+    for (i = 0; i < count; i++) {
+        printf("Index [%d] Record Entry Value: %s\n",i,data[i]);
+    }
+
+ return 0;
+}
