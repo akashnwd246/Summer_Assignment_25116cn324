@@ -1,0 +1,43 @@
+#include <stdio.h>
+struct Item {
+    int id;
+    char name[50];
+    int qty;
+};
+
+int main() {
+    struct Item inv[50];
+    int choice, n = 0, i;
+
+    while (1) {
+        printf("\n Inventory Menu \n");
+        printf("1. Add Item\n2. View Inventory\n3. Exit\n");
+        printf("Enter choice: ");
+        scanf("%d",&choice);
+
+        if (choice == 1) {
+            printf("Enter item ID: ");
+            scanf("%d",&inv[n].id);
+            printf("Enter item name: ");
+            scanf("%s",&inv[n].name);
+            printf("Enter quantity: ");
+            scanf("%d",&inv[n].qty);
+            n++;
+        } else if (choice == 2) {
+            if (n == 0) {
+                printf("Inventory empty.\n");
+            } else {
+                printf("\nInventory Stock \n");
+                for (i = 0; i < n; i++) {
+                    printf("ID: %d | Name: %s | Qty: %d\n", inv[i].id, inv[i].name, inv[i].qty);
+                }
+            }
+        } else if (choice == 3) {
+            printf("Exiting inventory.\n");
+            break;
+        } else {
+            printf("Invalid choice.\n");
+        }
+    }
+   return 0;
+}
