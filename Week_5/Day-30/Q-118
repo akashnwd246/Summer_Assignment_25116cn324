@@ -1,0 +1,39 @@
+#include <stdio.h>
+struct MiniLibrary {
+    int bookCode;
+    char title[50];
+};
+
+int main() {
+    struct MiniLibrary lib[50];
+    int choice, count = 0, i;
+
+    while (1) {
+        printf("\n Mini Library System \n");
+        printf("1. Add New Book\n2. List All Books\n3. Exit\n");
+        printf("Enter choice: ");
+        scanf("%d",&choice);
+
+        if (choice == 1) {
+            printf("Enter Book Code: ");
+            scanf("%d",&lib[count].bookCode);
+            printf("Enter Book Title: ");
+            scanf("%s",&lib[count].title);
+            count++;
+        } else if (choice == 2) {
+            if (count == 0) {
+                printf("No books available.\n");
+            } else {
+                for (i = 0; i < count; i++) {
+                    printf("Code: %d | Title: %s\n",lib[i].bookCode,lib[i].title);
+                }
+            }
+        } else if (choice == 3) {
+            printf("Exiting library.\n");
+            break;
+        } else {
+            printf("Invalid choice.\n");
+        }
+    }
+  return 0;
+}
