@@ -1,0 +1,40 @@
+#include <stdio.h>
+struct MiniEmp {
+    int id;
+    char name[50];
+};
+
+int main() {
+    struct MiniEmp emp[50];
+    int choice, total = 0, i;
+
+    while (1) {
+        printf("\n Mini Employee System \n");
+        printf("1. Add Employee\n2. Show Directory\n3. Exit\n");
+        printf("Enter choice: ");
+        scanf("%d",&choice);
+
+        if (choice == 1) {
+            printf("Enter Employee ID: ");
+            scanf("%d",&emp[total].id);
+            printf("Enter Name: ");
+            scanf("%s",&emp[total].name);
+            total++;
+        } else if (choice == 2) {
+            if (total == 0) {
+                printf("No registered employees.\n");
+            } else {
+                for (i = 0; i < total; i++) {
+                    printf("ID: %d | Name: %s\n",emp[i].id,emp[i].name);
+                }
+            }
+        } else if (choice == 3) {
+            printf("Exiting program.\n");
+            break;
+        } else {
+            printf("Invalid choice.\n");
+        }
+    }
+
+    return 0;
+}
