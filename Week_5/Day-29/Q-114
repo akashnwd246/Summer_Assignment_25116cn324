@@ -1,0 +1,38 @@
+#include <stdio.h>
+int main() {
+    int arr[100];
+    int n = 0, choice, i;
+
+    while (1) {
+        printf("\nArray Operations \n");
+        printf("1. Create Array\n2. Display Array\n3. Exit\n");
+        printf("Enter choice: ");
+        scanf("%d",&choice);
+
+        if (choice == 1) {
+            printf("Enter number of elements: ");
+            scanf("%d",&n);
+            printf("Enter elements: ");
+            for (i = 0; i < n; i++) {
+                scanf("%d",&arr[i]);
+            }
+        } else if (choice == 2) {
+            if (n == 0) {
+                printf("Array is empty.\n");
+            } else {
+                printf("Array elements: ");
+                for (i = 0; i < n; i++) {
+                    printf("%d ",arr[i]);
+                }
+                printf("\n");
+            }
+        } else if (choice == 3) {
+            printf("Exiting system.\n");
+            break;
+        } else {
+            printf("Invalid choice.\n");
+        }
+    }
+
+    return 0;
+}
